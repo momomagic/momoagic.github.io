@@ -1,0 +1,17 @@
+---
+layout: default
+title: Mo Alserr - IT consultant
+---
+{% for post in site.posts %}
+<div class="row">
+    <a href="{{ post.url }}">
+      <h2 class="text"> {{ post.title }} <small>  {{ post.date | date: "%b %Y" }} </small></h2>
+    </a>
+</div>
+<div class="row">
+    <p class="lead">
+        {{ post.head | markdownify | strip_html }}
+    </p>
+
+</div>
+{% endfor %}

@@ -1,8 +1,8 @@
-<!DOCTYPE HTML>
+{% capture build_version %}{{ site.time | date: "%Y%m%d%H%M%S" }}{% endcapture %}<!DOCTYPE HTML>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title> &mdash;</title>
+    <title>{{ page.title }} &mdash;</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="shortcut icon" href="/favicon.ico?v=20171028183208">
-    <meta property="og:title" content="">
-    <meta name="description" content="">
+    <link rel="shortcut icon" href="/favicon.ico?v={{ build_version }}">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta name="description" content="{{ page.description }}">
 </head>
 <body>
 
@@ -58,12 +58,7 @@
 
 
 <div class="container">
-    <div class="page-not-found">
-    <img src="/public/guru.png" alt="Not found" role="img" aria-label="Not found" align="middle">
-    <h1>404</h1>
-    <p><strong>Page not found :(</strong></p>
-</div>
-
+    {{ content }}
 </div>
 
 </body>
